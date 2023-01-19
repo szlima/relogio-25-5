@@ -39,6 +39,33 @@ header{
   margin: 15px 0;
 }
 
+#comandos{
+  margin: 10px 0;
+  display: flex;  
+}
+
+#break-label, #session-label{
+  margin: 0 10px;
+}
+
+h2{
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.fa-solid{
+  font-size: 1.6rem;
+  margin: 0 10px;
+}
+
+.fa-solid:hover{
+  cursor: pointer;
+}
+
+span{
+  font-size: 1.8rem;  
+}
+
 footer{
   font-size: .8rem;
   margin: 10px 0;
