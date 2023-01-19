@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 
 import './index.css';
 
+import Principal from './componentes/Principal';
+
 ReactDOM.render(
-  <h1>Relógio 25+5</h1>,
+  <Principal/>,
   document.querySelector('#root')
 );
