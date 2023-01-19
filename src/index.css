@@ -66,6 +66,21 @@ span{
   font-size: 1.8rem;  
 }
 
+#relogio{
+  border: 5px solid var(--verde-escuro);
+  border-radius: 3rem;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+#timer-label{
+  font-size: 1.8rem;
+}
+
+#time-left{
+  font-size: 5rem;
+}
+
 footer{
   font-size: .8rem;
   margin: 10px 0;

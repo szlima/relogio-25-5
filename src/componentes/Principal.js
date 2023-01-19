@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Comando from './Comando';
+import Relogio from './Relogio';
 
 export default function Principal(){
     
@@ -14,6 +15,8 @@ export default function Principal(){
                 <Comando tipo='break'/>
                 <Comando tipo='session'/>
             </div>
+
+            <Relogio/>
                         
             <footer>
                 <p>Designed and Coded by</p>
