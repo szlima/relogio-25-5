@@ -2,6 +2,7 @@ import React from 'react';
 
 import Comando from './Comando';
 import Relogio from './Relogio';
+import Player from './Player';
 
 export default function Principal(){
     
@@ -17,6 +18,7 @@ export default function Principal(){
             </div>
 
             <Relogio/>
+            <Player/>
                         
             <footer>
                 <p>Designed and Coded by</p>
