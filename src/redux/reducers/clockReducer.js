@@ -1,3 +1,6 @@
+import {
+    MUDARLENGTHBREAK
+} from '../actions/actionTypes';
 
 const estadoInicial= {
     tempo: '25:00',
@@ -9,7 +12,14 @@ const estadoInicial= {
 
 export default function clockReducer(state=estadoInicial, action){
     
-    switch(action.type){      
+    switch(action.type){
+
+        case MUDARLENGTHBREAK:
+            return {
+                ...state,
+                breakLength: action.payload.length,
+                tempo: action.payload.tempo
+            };  
                 
         default:
             return state;
