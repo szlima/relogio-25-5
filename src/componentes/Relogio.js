@@ -1,16 +1,20 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-function Relogio({sessao=true, tempo='25:00'}){
+function Relogio({sessao, tempo}){
 
     return (
         <div id='relogio'>
             <h3 id='timer-label'>{sessao ? 'Session' : 'Break'}</h3>
-            <h1 id='time-left'>
-                {tempo[1] === ':' ? '0'+tempo : tempo}
-            </h1>
+            <h1 id='time-left'>{tempo}</h1>
         </div>    
     );
 }
+
+const mapStateToProps= state => ({
+    sessao: state.clockReducer.session,
+    tempo: state.clockReducer.tempo
+});
   
-export default Relogio;
+export default connect(mapStateToProps)(Relogio);
   

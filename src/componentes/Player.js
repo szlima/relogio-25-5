@@ -1,10 +1,15 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-function Player(){
+import {
+    playingAction
+} from '../redux/actions/actionCreators';
+
+function Player({toPlay}){
       
     return (
         <div id='player'>
-            <span id='start_stop'>
+            <span id='start_stop' onClick={toPlay}>
                 <i className="fa-solid fa-play"></i>
                 <i className="fa-solid fa-pause"></i>
             </span>
@@ -13,5 +18,9 @@ function Player(){
     );
 }
   
-export default Player;
+const mapDispatchToProps= dispatch => ({
+    toPlay: () => dispatch(playingAction())
+});
+  
+export default connect(null, mapDispatchToProps)(Player);
   
