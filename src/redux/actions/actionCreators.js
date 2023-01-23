@@ -20,6 +20,10 @@ export const mudarLengthAction= (tipo, mudanca) => {
                 length= getState().clockReducer.breakLength + mudanca;
                 tempo= !getState().clockReducer.session ? length + ':00' : getState().clockReducer.tempo;
                 break;
+            case 'session':
+                length= getState().clockReducer.sessionLength + mudanca;
+                tempo= getState().clockReducer.session ? length + ':00' : getState().clockReducer.tempo;
+                break;
         }
         
         dispatch(mudarLength(tipo, length, tempo));

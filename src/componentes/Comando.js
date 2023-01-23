@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import {mudarLengthAction} from '../redux/actions/actionCreators';
 
-function Comando({tipo, pause, breakLength, sessionLength=25, mudarLength}){
+function Comando({tipo, pause, breakLength, sessionLength, mudarLength}){
   
     const tamanho= tipo === 'break' ? breakLength : sessionLength;
     
@@ -27,7 +27,8 @@ function Comando({tipo, pause, breakLength, sessionLength=25, mudarLength}){
 
 const mapStateToProps= state => ({
     pause: state.clockReducer.pause,
-    breakLength: state.clockReducer.breakLength
+    breakLength: state.clockReducer.breakLength,
+    sessionLength: state.clockReducer.sessionLength
 });
 
 const mapDispatchToProps= dispatch => ({
