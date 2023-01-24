@@ -1,6 +1,6 @@
 import {
     MUDARLENGTHBREAK, MUDARLENGTHSESSION,
-    MUDARTEMPO, PLAY, PAUSE
+    MUDARTEMPO, PLAY, PAUSE, RESET
 } from '../actions/actionTypes';
 
 const estadoInicial= {
@@ -46,7 +46,12 @@ export default function clockReducer(state=estadoInicial, action){
                 ...state,
                 pause: true
             };
-            
+
+        case RESET:
+            return {
+                ...estadoInicial
+            };
+
         default:
             return state;
     }

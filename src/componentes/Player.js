@@ -2,10 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import {
-    playingAction, pauseAction
+    playingAction, pauseAction, resetAction
 } from '../redux/actions/actionCreators';
 
-function Player({pause, toPlay, toPause}){
+function Player({pause, toPlay, toPause, toReset}){
       
     return (
         <div id='player'>
@@ -13,7 +13,7 @@ function Player({pause, toPlay, toPause}){
                 <i className="fa-solid fa-play"></i>
                 <i className="fa-solid fa-pause"></i>
             </span>
-            <i className="fa-solid fa-arrows-rotate" id='reset'></i>
+            <i className="fa-solid fa-arrows-rotate" id='reset' onClick={toReset}></i>
         </div>
     );
 }
@@ -24,7 +24,8 @@ const mapStateToProps= state => ({
 
 const mapDispatchToProps= dispatch => ({
     toPlay: () => dispatch(playingAction()),
-    toPause: () => dispatch(pauseAction())
+    toPause: () => dispatch(pauseAction()),
+    toReset: () => dispatch(resetAction())
 });
   
 export default connect(mapStateToProps, mapDispatchToProps)(Player);
