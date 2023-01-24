@@ -1,5 +1,5 @@
 import {
-    MUDARLENGTH, PLAY, MUDARTEMPO
+    MUDARLENGTH, PLAY, MUDARTEMPO, PAUSE
 } from './actionTypes';
 
 let contador;
@@ -80,4 +80,13 @@ export const playingAction= () => {
         
         }, 1000);
     };
+};
+
+export const pauseAction= () => {
+
+    clearInterval(contador);
+    
+    return {
+        type: PAUSE
+    }
 };

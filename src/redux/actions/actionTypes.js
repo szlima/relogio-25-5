@@ -3,4 +3,4 @@ export const MUDARLENGTHBREAK= 'MUDARLENGTHBREAK';
 export const MUDARLENGTHSESSION= 'MUDARLENGTHSESSION';
 export const MUDARTEMPO= 'MUDARTEMPO';
 export const PLAY= 'PLAY';
-
+export const PAUSE= 'PAUSE';

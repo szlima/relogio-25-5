@@ -2,14 +2,14 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import {
-    playingAction
+    playingAction, pauseAction
 } from '../redux/actions/actionCreators';
 
-function Player({toPlay}){
+function Player({pause, toPlay, toPause}){
       
     return (
         <div id='player'>
-            <span id='start_stop' onClick={toPlay}>
+            <span id='start_stop' onClick={pause ? toPlay : toPause}>
                 <i className="fa-solid fa-play"></i>
                 <i className="fa-solid fa-pause"></i>
             </span>
@@ -17,10 +17,15 @@ function Player({toPlay}){
         </div>
     );
 }
-  
+
+const mapStateToProps= state => ({
+    pause: state.clockReducer.pause
+});
+
 const mapDispatchToProps= dispatch => ({
-    toPlay: () => dispatch(playingAction())
+    toPlay: () => dispatch(playingAction()),
+    toPause: () => dispatch(pauseAction())
 });
   
-export default connect(null, mapDispatchToProps)(Player);
+export default connect(mapStateToProps, mapDispatchToProps)(Player);
   
