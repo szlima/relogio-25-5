@@ -81,6 +81,10 @@ span{
   font-size: 5rem;
 }
 
+.minuto-final{
+  color: var(--vermelho);
+}
+
 footer{
   font-size: .8rem;
   margin: 10px 0;
