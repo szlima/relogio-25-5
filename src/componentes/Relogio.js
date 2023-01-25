@@ -7,7 +7,8 @@ function Relogio({sessao, tempo}){
         <div id='relogio'>
             <h3 id='timer-label'>{sessao ? 'Session' : 'Break'}</h3>
             <h1 id='time-left'>{tempo}</h1>
-        </div>    
+            <audio id='beep' src='https://actions.google.com/sounds/v1/alarms/beep_short.ogg'/>
+        </div>
     );
 }
 

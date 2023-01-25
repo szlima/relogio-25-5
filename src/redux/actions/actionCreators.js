@@ -1,5 +1,6 @@
 import {
-    MUDARLENGTH, PLAY, MUDARTEMPO, PAUSE, RESET
+    MUDARLENGTH, MUDARTEMPO, TROCARMODO,
+    PLAY, PAUSE, RESET
 } from './actionTypes';
 
 let contador;
@@ -46,6 +47,24 @@ const mudarTempo= tempoNovo => ({
     }
 });
 
+const trocarModo= tempo => ({
+    type: TROCARMODO,
+    payload: {
+        tempo
+    }
+});
+
+const trocarModoAction= () => {
+    return (dispatch, getState) => {
+
+        let tempo= (getState().clockReducer.session ? getState().clockReducer.breakLength : getState().clockReducer.sessionLength) + ':00';
+        if(tempo[1] === ':')
+            tempo= '0'+tempo;
+
+        dispatch(trocarModo(tempo));
+    };
+};
+
 export const playingAction= () => {
     return (dispatch, getState) => {
       
@@ -74,9 +93,13 @@ export const playingAction= () => {
                     segundosNovo= '0' + segundosNovo;
   
                 tempoNovo= minutosNovo + ':' + segundosNovo;
-                dispatch(mudarTempo(tempoNovo));          
-            }else
-                console.log('00:00');
+                dispatch(mudarTempo(tempoNovo));
+
+            }else{
+          
+                dispatch(trocarModoAction());
+                document.querySelector('#beep').play();
+            }
         
         }, 1000);
     };
